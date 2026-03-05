@@ -4,16 +4,23 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
+// CORS configuration
+app.use(cors({
+  origin: "https://lib-system-zg2l.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
-app.use(cors());
 
 // Connect DB
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected via Compass"))
+  .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-// Use Routes
+// Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/books", require("./routes/books"));
 
