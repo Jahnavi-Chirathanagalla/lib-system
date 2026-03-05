@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link} from "react-router-dom";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -31,11 +31,11 @@ const Login = () => {
         className="card p-4 shadow-lg"
         style={{ width: "400px", borderRadius: "15px" }}
       >
-        <h3 className="text-center mb-4 fw-bold text-primary">Student Login</h3>
+        <h3 className="text-center mb-4 fw-bold text-primary">Login</h3>
         {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Student ID</label>
+            <label className="form-label">Email ID</label>
             <input
               type="text"
               className="form-control"
@@ -59,6 +59,14 @@ const Login = () => {
           <button type="submit" className="btn btn-primary w-100 py-2">
             Login to Library
           </button>
+          <div className="text-center mt-3">
+  <p className="mb-0">
+    Don't have an account?{" "}
+    <Link to="/register" className="fw-bold text-decoration-none">
+      Register
+    </Link>
+  </p>
+</div>
         </form>
       </div>
     </div>
