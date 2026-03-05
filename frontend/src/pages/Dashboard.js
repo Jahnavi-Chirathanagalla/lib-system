@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://lib-system-backend.onrender.com")
+      .get("https://lib-system-back-end.onrender.com")
       .then((res) => setBooks(res.data));
   }, []);
 
