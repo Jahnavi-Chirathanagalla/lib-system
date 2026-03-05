@@ -5,10 +5,9 @@ require("dotenv").config();
 
 const app = express();
 
-// CORS configuration
 app.use(cors({
-  origin: "https://lib-system-zg2l.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: "https://lib-system-front.onrender.com",
+  methods: ["GET","POST","PUT","DELETE"],
   credentials: true
 }));
 
