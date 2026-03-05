@@ -19,13 +19,13 @@ const AdminPanel = () => {
 
   const fetchBooks = () => {
     axios
-      .get("https://lib-system-backend.onrender.com")
+      .get("https://lib-system-back-end.onrender.com")
       .then((res) => setBooks(res.data));
   };
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    await axios.post("https://lib-system-backend.onrender.com", form);
+    await axios.post("https://lib-system-back-end.onrender.com", form);
     fetchBooks();
   };
 
